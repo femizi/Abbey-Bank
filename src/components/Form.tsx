@@ -41,8 +41,7 @@ const Form = () => {
       setError(true)
     )
   }
-  console.log(userDetails)
-  console.log(confirmPassword)
+  
 
 
   return (
