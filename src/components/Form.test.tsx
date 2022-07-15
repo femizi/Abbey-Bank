@@ -7,8 +7,8 @@ describe("Form", () => {
 
     it(`should not show error message initially`, () =>{
         render(<Form/>)
-        const ErrorId = screen.getByTestId(`error`)
-        expect(ErrorId).toBeNull
+       
+        expect(screen.getByTestId(`error`)).toBeNull()
     })
     it("should show title all the time", () => {
         

@@ -16,6 +16,7 @@ const PasswordScreen = ({ userDetails, setUserDetails, confirmPassword,setConfir
       <motion.input id='password'
         initial={{ x: 200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
+        data-testid='password'
         className='border-slate-400 | border-2 | placeholder:italic | placeholder:text-slate-400 |  p-2 | focus:outline-blue-500 ' type="password"
         placeholder='Enter your passsword'
         value={userDetails.password}
@@ -30,6 +31,7 @@ const PasswordScreen = ({ userDetails, setUserDetails, confirmPassword,setConfir
       <motion.input
         initial={{ x: 200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
+        datat-testid='confirmPassword'
         id='confirmPassword'
         className='border-slate-400 | border-2 | p-2 | placeholder:italic | placeholder:text-slate-400 | focus:outline-blue-500'
         placeholder='Confirm your password' type="password"
