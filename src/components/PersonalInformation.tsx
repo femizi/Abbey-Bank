@@ -11,6 +11,24 @@ const PersonalInformation = ({ userDetails, setUserDetails, setPages }) => {
   return (
 
     <>
+    <motion.label
+        initial={{ x: -700, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: -100, opacity: 0 }}
+
+
+        htmlFor="email " className='step-0 font-bold'>Email </motion.label>
+      <motion.input id='email'
+        initial={{ x: -700, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: -100, opacity: 0 }}
+        className='border-slate-400 | border-2 | placeholder:italic | placeholder:text-slate-400 |  p-2 | focus:outline-blue-500 ' type="email"
+        placeholder='Enter your email'
+        value={userDetails.email}
+        onChange={(e) => setUserDetails({ ...userDetails, email: e.target.value })}
+        onKeyDown={(e) => handleKeydDown(e)}
+
+      />
 
       <motion.label
         initial={{ x: -700, opacity: 0 }}

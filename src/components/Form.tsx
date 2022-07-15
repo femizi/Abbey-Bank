@@ -10,6 +10,7 @@ import ProgressBar from './ProgressBar'
 const Form = () => {
   const [pages, setpages] = useState(0)
   const [userDetails, setUserDetails] = useState({
+    email: ``,
     firstName: ``,
     lastName: ``,
     password: ``,
@@ -21,10 +22,10 @@ const Form = () => {
       case 0:
         return <PersonalInformation userDetails={userDetails} setUserDetails={setUserDetails} setPages={setpages} />
       case 1:
-        return <PasswordScreen 
-        submitHandler={submitHandler}
-        userDetails={userDetails} 
-        setUserDetails={setUserDetails} confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword} />
+        return <PasswordScreen
+          submitHandler={submitHandler}
+          userDetails={userDetails}
+          setUserDetails={setUserDetails} confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword} />
       case 2:
         return <Confirmation userDetails={userDetails} setUserDetails={setUserDetails} />
       default:
@@ -41,7 +42,7 @@ const Form = () => {
       setError(true)
     )
   }
-  
+
 
 
   return (
@@ -52,6 +53,7 @@ const Form = () => {
         <Header pages={pages} />
         {showContent(pages)}
         {error && <motion.div
+          data-testid="error"
           initial={{ y: -700, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className='text-center text-red-600 font-semibold'> Passwords do not match</motion.div>}
